@@ -16,7 +16,8 @@
 <body>
   <main>
   <!-- Sign-up form start -->
-    <div class="card">
+   
+    <div class="card" id="hideCard">
       
         <div class="img-container">
           <img class="stat-image" src="/assets/images/illustration-sign-up-desktop.svg" alt="statistical image with ombre background">
@@ -31,24 +32,29 @@
           <li><img  class="icons" src="/assets/images/icon-list.svg">And much more!</li>
         </ul>
           
-        <form class="signup-container" name="signupForm">
-          <label for="email"><b>Email address</b></label>
-          <input type="text" placeholder="email@company.com" name="email">
-          <button  type="button" onclick="togglePopup()">Subscribe to monthly newsletter</button>
+        <form class="signup-container" name="signupForm" id="form">
+          <label for="email" ><b>Email address</b></label>
+          <p id="invalid-email" class="invalid-email">Valid email required</p>
+          <input type="text" id="email" placeholder="email@company.com" name="email">
+          <button type="submit" id="submit-btn">Subscribe to monthly newsletter</button>
         </form>
       </div>
     </div>
+  </div>
       <!-- Sign-up form end -->
 
       <!-- Success message start -->
+      <div class="overlay" id="popupOverlay">
       <div class="success-container" id="popup">
         <img class="subscribe-img" src="/assets/images/icon-success.svg">
         <h1>Thanks for subscribing!</h1>
         <p>A confirmation email has been sent to <b>EMAIL</b>. Please open it and click the button inside to confirm your subscription.</p>
-
-        <button type="button" onclick="togglePopup()">Dismiss message</button>
+        <button type="button" onclick="closePopup()" id="dismissBtn">Dismiss message</button>
       </div>
+    </div>
        <!--Success message end -->
     
     <script src="./script.js"></script>
-  
+  </main>
+  </body>
+</html>

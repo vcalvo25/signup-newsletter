@@ -26,7 +26,7 @@ body {
     max-width: 100%;
     width: 40%;
     border-radius: 20px;
-    margin: 150px auto;
+    margin: 180px auto;
     padding: 15px 15px 15px 45px;
     gap: 40px;
 }
@@ -46,7 +46,6 @@ body {
 .card-info {
     display: flex;
     flex-direction: column;
-    
 }
 
 h1 {
@@ -119,10 +118,9 @@ button:active {
 
 .success-container {
     display: none;
-  
     flex-direction: column;
     background-color: var(--white);
-    margin: 150px auto;
+    margin: 180px auto;
     max-width: 100%;
     width: 20%;
     border-radius: 20px;
@@ -157,13 +155,18 @@ button:active {
     border-style: none;
 }
 
-.success-container.show {
-    display: block;
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    top: 0;
 }
 
-
-
-
- 
-
-
+.error-message{
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
