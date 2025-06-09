@@ -34,9 +34,9 @@
           
         <form class="signup-container" name="signupForm" id="form">
           <label for="email" ><b>Email address</b></label>
-          <p id="invalid-email" class="invalid-email">Valid email required</p>
+          <p id="invalid-email" class="error-message">Valid email required</p>
           <input type="text" id="email" placeholder="email@company.com" name="email">
-          <button type="submit" id="submit-btn">Subscribe to monthly newsletter</button>
+          <button type="button" id="submit-btn">Subscribe to monthly newsletter</button>
         </form>
       </div>
     </div>
@@ -49,12 +49,11 @@
         <img class="subscribe-img" src="/assets/images/icon-success.svg">
         <h1>Thanks for subscribing!</h1>
         <p>A confirmation email has been sent to <b>EMAIL</b>. Please open it and click the button inside to confirm your subscription.</p>
-        <button type="button" onclick="closePopup()" id="dismissBtn">Dismiss message</button>
+        <button type="button" onclick="closePopup()" id="dismiss-btn">Dismiss message</button>
       </div>
     </div>
        <!--Success message end -->
-    
-    <script src="./script.js"></script>
   </main>
+  <script src="./script.js"></script>
   </body>
 </html>

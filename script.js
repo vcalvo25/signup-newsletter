@@ -1,37 +1,46 @@
-/*const popup = document.getElementById("popup");
-const overlay = document.getElementById("popupOverlay");
-const card = document.getElementById("hideCard");
-const dismissBtn = document.getElementById("dismissBtn");
-const emailInput = document.querySelector('input[name="email"]').value;
+document.addEventListener("DOMContentLoaded", function () {
+  const invalidEmail = document.getElementById("invalid-email");
+  const emailInput = document.getElementById("email");
+  const submitBtn = document.getElementById("submit-btn");
+  const dismissBtn = document.getElementById("dismiss-btn");
+  const popup = document.getElementById("popup");
+  const card = document.querySelector(".card");
+  const overlay = document.getElementById("popupOverlay"); 
 
-function togglePopup() {
-    popup.style.display = "block";
-    overlay.style.display = "block";
-    card.style.display = "none";
-}
+  function validateEmail(email) {
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return isValidEmail.test(email);
+  }
 
-function closePopup() {
-    popup.style.display = "none";
-    overlay.style.display = "none";
-    card.style.display = "flex";
-}*/
+  function togglePopup() {
+    popup.classList.toggle("show");
+    overlay.classList.toggle("show");
+    card.style.display = popup.classList.contains("show") ? "none" : "flex";
 
-const email = document.getElementById('email');
-const submitBtn = document.querySelector('submit');
-const invalidEmail = document.getElementById("invlaid-email");
-const emailInput = document.getElement
-
-function validateEmail(email) {
-    const isValidEmail = /^\S+@\S+$/g
-    return isValidEmail.text(email);
-}
-
-submitBtn.addEventListener('click', (e) => {
-    e.preventDefault()
-    const email = emailInput.ariaValueMax.trim()
-
-    if(!validateEmail(email)) {
-        invalidEmail.classList.add('active')
-        emailInput.classList.add('active')
+    if (popup.classList.contains("show")) {
+      const email = emailInput.value.trim();
+      const emailElement = popup.querySelector("p b");
+      emailElement.textContent = email || "ash@loremcompany.com";
     }
-})
+  }
+
+  function closePopup() {
+    popup.classList.remove("show");
+    overlay.classList.remove("show");
+    card.style.display = "flex";
+  }
+
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+
+    if (!email || !validateEmail(email)) {
+      invalidEmail.style.display = "block";
+    } else {
+      invalidEmail.style.display = "none";
+      togglePopup();
+    }
+  });
+
+  dismissBtn.addEventListener("click", closePopup);
+});

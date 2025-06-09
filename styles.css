@@ -88,7 +88,7 @@ li {
 }
 
 label {
-    font-size: .7em;
+    font-size: .8em;
     margin-bottom: 8px;
 }
 
@@ -166,7 +166,19 @@ button:active {
 }
 
 .error-message{
+    display: none;
     color: red;
     font-size: 14px;
     margin-top: 5px;
+}
+
+#popup.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
