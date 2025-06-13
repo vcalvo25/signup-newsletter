@@ -19,8 +19,8 @@ View the optimal layout for the component depending on their device's screen siz
 Sign up for newsletter
 
 Links
-Solution URL: Add solution URL here
-Live Site URL: https://vcalvo25.github.io/-design-article/
+Solution URL: https://www.frontendmentor.io/solutions/newsletter-sign-up-form-with-success-message-5OFjADGHMs
+Live Site URL: https://vcalvo25.github.io/signup-newsletter/
 
 My process
 Built with
