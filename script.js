@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = emailInput.value.trim();
 
     if (!email || !validateEmail(email)) {
-      invalidEmail.style.display = "block";
+      invalidEmail.style.display = "flex";
     } else {
       invalidEmail.style.display = "none";
       togglePopup();
